@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+  <!-- 
+    Theme by Victor Kurauchi @sickmindz.com.br
+    Since June, 2013.
+  -->
+
+<html lang="en">
+  <head>
+    <title>{Title}</title>
+
+    <link rel="shortcut icon" href="{Favicon}">
+
+    <!-- Infinite scrolling -->
+    <script type="text/javascript" src="http://codysherman.tumblr.com/tools/infinite-scrolling/code"></script>
+ 
+    <style type="text/css"> 
+
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #333333;
+        background-color: #ffffff;
+        /* nicebackground by themaxdavis, all credits. */
+        background: url('http://themes.themaxdavis.com/application/themes/new/IMG/bg_body.gif') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      hgroup,
+      nav,
+      section {
+        display: block;
+      }
+
+      audio,
+      canvas,
+      video {
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+      }
+
+      audio:not([controls]) {
+        display: none;
+      }
+
+      html {
+        font-size: 100%;
+        -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+      }
+
+      li {
+       list-style-type: none; 
+      }
+
+      .block-photo {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        margin: 0 auto;
+        width: 450px;
+      }
+
+      .block-text {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        width: 450px;
+        margin: 0 auto;
+      }
+
+      .clearfix {
+        clear:both;
+      }
+
+      hr {
+        margin: 20px 0;
+        border: 0;
+        border-top: 0.5px solid #eeeeee;
+        border-bottom: 1px solid #ffffff;
+      }
+
+      #title-content {
+        margin: 20px;
+      }
+
+      a {
+        color: rgb(40, 127, 168);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .pull-right {
+        float:right;
+        margin-right: 20px;
+      }
+
+      .font-small {
+        font-size: 10px;
+      }
+
+    </style>        
+  
+  </head>
+
+  <body>
+
+    <!-- Page tittle -->
+    <div id="title-content">
+      <h1>{Title}</h1>
+    </div>
+
+    <!-- Page description -->
+    {block:Description}
+      <p id="description">{Description}</p>
+    {/block:Description}
+
+    <div class="pull-right">
+      <p class="font-small">theme by <a href="http://twitter.com/victorkurauchi" target="_blank">@victorkurauchi</a> </p>
+    </div>
+
+    <div class = "autopagerize_page_element" >
+      {block:Posts}
+
+        <!-- Photo post -->      
+        {block:Photo}
+          <div class="block-photo">
+            <img src="{PhotoURL-400}" alt="{PhotoAlt}" height="{PhotoHeight-400}" width="{PhotoWidth-400}"/>
+          </div>
+          <hr>
+        {/block:Photo}
+
+        <!-- Text post -->
+        {block:Text}
+          <div class="block-text">
+            <div class="clearfix"></div>
+            {Body}
+          </div>
+          <hr>
+        {/block:Text}
+
+      {/block:Posts}
+    </div>
+
+    
+  </body>
+
+</html>
