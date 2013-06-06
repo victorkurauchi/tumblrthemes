@@ -110,6 +110,11 @@
         margin-right: 20px;
       }
 
+      .pull-left {
+        float: left;
+        margin-right: 10px;
+      }
+
       .font-small {
         font-size: 10px;
       }
@@ -152,23 +157,64 @@
         <!-- Photo post -->      
         {block:Photo}
           <div class="block-photo">
+
             <img src="{PhotoURL-400}" alt="{PhotoAlt}" height="{PhotoHeight-400}" width="{PhotoWidth-400}"/>
+
+            <!-- Tag content -->
+            <div class="tag-content">
+              {block:Tags} 
+                {Tag}
+              {/block:Tags}
+            </div>
+
+            <!-- Like content -->
+            <div class="like-content pull-left">
+              {LikeButton color="black"}
+            </div>
+
+            <!-- Reblog content -->
+            <div class="reblog-content pull-left">
+              {ReblogButton color="black"}
+            </div>
+
           </div>
-          <hr>
+
+          <div clas="clearfix"></div>
         {/block:Photo}
 
         <!-- Text post -->
         {block:Text}
           <div class="block-text">
+            
             <div class="clearfix"></div>
             {Body}
+            <div class="clearfix"></div>
+
+            <!-- Tag content -->
+            <div class="tag-content">
+              {block:Tags} 
+                {Tag}
+              {/block:Tags}
+            </div>
+
+            <!-- Like content -->
+            <div class="like-content pull-left">
+              {LikeButton color="black"}
+            </div>
+
+            <!-- Reblog content -->
+            <div class="reblog-content pull-left">
+              {ReblogButton color="black"}
+            </div>
+
           </div>
-          <hr>
+
+          <div clas="clearfix"></div>
+
         {/block:Text}
 
       {/block:Posts}
     </div>
-
     
   </body>
 
