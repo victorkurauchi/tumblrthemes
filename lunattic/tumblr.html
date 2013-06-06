@@ -98,6 +98,7 @@
       a {
         color: rgb(40, 127, 168);
         text-decoration: none;
+        text-transform:lowercase;
       }
 
       a:hover {
@@ -113,25 +114,37 @@
         font-size: 10px;
       }
 
+      /*
+      #top-fixed {
+        position:fixed;
+      }
+      */
+
     </style>        
   
   </head>
 
   <body>
 
-    <!-- Page tittle -->
-    <div id="title-content">
-      <h1>{Title}</h1>
+    <div id="top-fixed">
+
+      <!-- Page tittle -->
+      <div id="title-content">
+        <h1>{Title}</h1>
+      </div>
+
+      <!-- Page description -->
+      {block:Description}
+        <p id="description">{Description}</p>
+      {/block:Description}
+
+      <div class="pull-right">
+        <p class="font-small">theme by <a href="http://twitter.com/victorkurauchi" target="_blank">@victorkurauchi</a> </p>
+      </div>
+
     </div>
 
-    <!-- Page description -->
-    {block:Description}
-      <p id="description">{Description}</p>
-    {/block:Description}
-
-    <div class="pull-right">
-      <p class="font-small">theme by <a href="http://twitter.com/victorkurauchi" target="_blank">@victorkurauchi</a> </p>
-    </div>
+    <div class="clearfix"></div>
 
     <div class = "autopagerize_page_element" >
       {block:Posts}
