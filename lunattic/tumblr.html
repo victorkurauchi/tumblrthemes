@@ -222,12 +222,18 @@
               {block:NoteCount} 
                 {NoteCountWithLabel}
               {/block:NoteCount}
+
+
             </div>
 
             <div class="clearfix"></div>
 
             <div class="content-image">  
-              <img src="{PhotoURL-400}" alt="{PhotoAlt}" height="{PhotoHeight-400}" width="{PhotoWidth-400}"/>
+              {block:RebloggedFrom} 
+              <a href="{ReblogRootURL}" target="_blank">
+                <img src="{PhotoURL-400}" alt="{PhotoAlt}" height="{PhotoHeight-400}" width="{PhotoWidth-400}"/>
+              </a>
+              {/block:RebloggedFrom}
             </div>
             
             <div class="clearfix"></div>
@@ -262,7 +268,6 @@
             </div>
 
             <div class="clearfix"></div>
-
             {Body}
             <div class="clearfix"></div>
             <hr>
